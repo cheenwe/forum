@@ -171,7 +171,7 @@ zh-CN:
         btn_submit: :thredded.search.form.label
         label: "搜索"
         placeholder: "搜索帖子和回复"
-    time_ago: "%{time} 前"
+    time_ago: "%{time}前"
     topics:
       delete_confirm: "你确定删除该帖子吗？该动作不可逆。"
       delete_topic: "删除帖子"
