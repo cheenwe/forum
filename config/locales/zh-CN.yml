@@ -1,14 +1,14 @@
 zh-CN:
   brand:
-    name: Forum
+    name: Decred
   common:
-    time_ago: "%{time} ago"
+    time_ago: "%{time}前"
   nav:
-    edit_my_account: Edit my account
+    edit_my_account: 编辑账户
     forums: :thredded.nav.all_messageboards
     sign_in: :devise.shared.links.sign_in
-    sign_out: Sign out
-    theme: Theme
+    sign_out: 注销
+    theme: 主题
   themes:
-    day: Day
-    night: Night
+    day: 白天
+    night: 夜晚
