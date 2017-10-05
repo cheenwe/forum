@@ -23,6 +23,7 @@ h2 {
 
 a {
   @extend %thredded--link;
+  // text-decoration: underline !important;
 }
 
 blockquote {

@@ -10,3 +10,50 @@
     padding: 0;
   }
 }
+
+.field {
+  margin-bottom: 20px;
+}
+
+.actions {
+  margin-bottom: 20px;
+}
+
+.thredded--alert,
+.thredded--flash-message,
+.form-inputs.error,
+.flash-message {
+  border-radius: 0;
+}
+
+.thredded--navigation--search input[type="search"] {
+  padding: .5375rem .75rem .675rem .75rem;
+}
+
+.thredded--user-navigation--item a,
+.thredded--moderation-navigation--item a {
+  padding: .45rem 0;
+}
+
+.thredded--messageboard {
+  text-decoration: none !important;
+  padding: 15px;
+}
+
+.thredded--messageboard--header {
+  display: block;
+}
+
+.thredded--messageboard--title {
+  // text-decoration: underline;
+}
+
+.thredded--messageboard--meta {
+  text-align: left;
+}
+
+.thredded--messageboard--meta,
+.thredded--messageboard--byline {
+  color: #c4cbd2;
+}
+

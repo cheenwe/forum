@@ -120,7 +120,7 @@ zh-CN:
           hint: "自动关注所有新帖子。更改该设置将会更改所有板块的设置。"
           label: "关注所有新帖子"
         follow_topics_on_mention:
-          hint: "当有人在帖子中提及你（如：@you）时你将自动关注该帖子。"
+          hint: "当有人在帖子中提及你（如：@sam）时你将自动关注该帖子。"
           label: "关注那些你被提及的帖子"
         messageboard_auto_follow_topics:
           hint: "自动关注该板块的所有新帖子。 这将覆盖以上所有的设置。"
