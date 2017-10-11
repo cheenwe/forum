@@ -133,11 +133,11 @@ Thredded.layout = 'application'
 #
 # By default, a user will be subscribed to a topic they've created. Uncomment this to not subscribe them:
 #
-# Thredded.auto_follow_when_creating_topic = false
+Thredded.auto_follow_when_creating_topic = false
 #
 # By default, a user will be subscribed to (follow) a topic they post in. Uncomment this to not subscribe them:
 #
-# Thredded.auto_follow_when_posting_in_topic = false
+Thredded.auto_follow_when_posting_in_topic = false
 #
 # By default, a user will be subscribed to the topic they get @-mentioned in.
 # Individual users can disable this in the Notification Settings.
@@ -152,7 +152,7 @@ Thredded.layout = 'application'
 # Thredded.notifiers = [Thredded::EmailNotifier.new]
 #
 # none:
-# Thredded.notifiers = []
+Thredded.notifiers = []
 #
 # add in (must install separate gem (under development) as well):
 # Thredded.notifiers = [Thredded::EmailNotifier.new, Thredded::PushoverNotifier.new(ENV['PUSHOVER_APP_ID'])]
