@@ -40,3 +40,9 @@ body {
   background-color: $brand-primary;
   height: 0.25rem;
 }
+
+.app-auth-container {
+  width: 80%;
+  max-width: 400px;
+  @include margin(null auto);
+}

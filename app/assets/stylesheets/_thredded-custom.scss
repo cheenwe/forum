@@ -37,7 +37,7 @@
 }
 
 .thredded--user-navigation {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .thredded--user-navigation,
@@ -89,10 +89,11 @@
 .thredded--messageboard {
   text-decoration: none !important;
   padding: 29px;
+  @include transition(ease .2s);
 
   &:hover {
     text-decoration: none !important;
-    background-color: #e7f6fc;
+    // background-color: #e7f6fc;
     border-color: #ddd #eee #eee !important;
 
     .thredded--messageboard--title {
@@ -160,7 +161,8 @@
   float: left;
   width: 1.65rem;
   height: 1.65rem;
-  margin-right: 10px;
+  position: absolute;
+  left: -2.2rem;
 
   img {
     width: 1.65rem;
@@ -177,3 +179,8 @@
   margin-left: 5px;
 }
 
+
+// post
+.thredded--post--user {
+  font-weight: 600;
+}

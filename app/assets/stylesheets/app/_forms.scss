@@ -15,6 +15,10 @@
   }
 }
 
+.thredded--form label, form label {
+  font-weight: 400;
+}
+
 .form-hint {
   @extend %form-hint;
 }
