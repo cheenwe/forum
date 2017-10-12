@@ -1,10 +1,22 @@
 @import "./header/theme_selector";
 
 .app-header {
-  border-bottom: 1px solid $light-gray;
+  // border-bottom: 1px solid $light-gray;
+  // padding: 20px 0;
+  margin-bottom: 20px;
   a {
     display: inline-block;
     padding: 1rem 0;
+  }
+}
+
+.logo {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  img {
+    width: 180px;
+    max-width: 30%;
   }
 }
 
