@@ -4,7 +4,7 @@ html {
 
 body {
   background-color: $body-background-color;
-  letter-spacing: -0.025rem;
+  // letter-spacing: -0.025rem;
   color: #09182d;
 }
 
@@ -21,8 +21,8 @@ body {
 
 .container {
   margin: 0 auto;
-  // max-width: ($grid-container-max-width + 4rem);
-  max-width: 880px;
+  max-width: ($grid-container-max-width + 4rem);
+  // max-width: 880px;
   padding: 0 1.2rem 0 1.2rem;
   @include clearfix;
 
