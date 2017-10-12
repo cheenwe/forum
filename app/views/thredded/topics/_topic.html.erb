@@ -6,7 +6,8 @@
   <div class="thredded--topics--posts-count"><%= topic.posts_count %></div>
 
   <div class="thredded--topics--topic-avatar">
-    <%= image_tag Thredded.avatar_url.call(topic.last_user) %>
+    <%= image_tag Thredded.avatar_url.call(topic.user), class: "first" %>
+    <%= image_tag Thredded.avatar_url.call(topic.last_user), class: "last" %>
   </div>
 
   <div class="thredded--topics--follow-info" title="<%= topic_follow_reason_text topic.follow_reason %>">

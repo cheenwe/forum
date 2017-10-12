@@ -19,6 +19,11 @@
   font-weight: 400;
 }
 
+.field .help {
+  font-size: 14px;
+  color: #596d81;
+}
+
 .form-hint {
   @extend %form-hint;
 }

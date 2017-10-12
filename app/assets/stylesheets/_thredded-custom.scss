@@ -65,6 +65,8 @@
   top: 0;
   left: 0;
   z-index: 9999;
+  border: 0;
+
   span {
   }
 }
@@ -73,9 +75,14 @@
 .thredded--flash-message--notice,
 .flash-message--notice {
   color: #fff;
-  text-align: center;
   background-color: #69d3f5;
-  border-color: transparent;
+}
+
+.thredded--alert-warning,
+.thredded--flash-message--alert,
+.flash-message--alert {
+  color: #fff;
+  background-color: #fd714b;
 }
 
 // Breadcrumb
@@ -159,15 +166,23 @@
 
 .thredded--topics--topic-avatar {
   float: left;
-  width: 1.65rem;
-  height: 1.65rem;
+  @include size(1.65rem);
   position: absolute;
   left: -2.2rem;
 
   img {
-    width: 1.65rem;
-    height: 1.65rem;
     border-radius: 50%;
+    position: absolute;
+    &.first {
+      @include size(1.65rem);
+      top: 0;
+      left: 0;
+    }
+    &.last {
+      @include size(.85rem);
+      bottom: 0;
+      right: -3px;
+    }
   }
 }
 
