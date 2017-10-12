@@ -26,6 +26,10 @@ a {
   // text-decoration: underline !important;
 }
 
+tt, code, kbd, samp, pre, xmp {
+  font-family: Menlo, Consolas, "Liberation Mono", Courier, monospace;
+}
+
 blockquote {
   @extend %thredded--blockquote;
 }
