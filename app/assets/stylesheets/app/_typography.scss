@@ -1,6 +1,7 @@
 h1, h2, h3 {
   font-size: 1em;
   line-height: 1.1;
+  font-weight: 400;
 }
 
 h1 {
@@ -23,7 +24,9 @@ h2 {
 
 a {
   @extend %thredded--link;
-  // text-decoration: underline !important;
+  &:hover {
+    text-decoration: underline !important;
+  }
 }
 
 tt, code, kbd, samp, pre, xmp {

@@ -1,7 +1,9 @@
 <% %i(success error notice alert).each do |key| %>
     <% if flash[key] %>
         <div class="flash-message flash-message--<%= key %>">
-          <%= flash[key] %>
+          <span>
+            <%= flash[key] %>
+          </div>
         </div>
     <% end %>
 <% end %>

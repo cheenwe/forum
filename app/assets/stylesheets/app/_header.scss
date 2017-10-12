@@ -1,34 +1,36 @@
 @import "./header/theme_selector";
 
 .app-header {
-  // border-bottom: 1px solid $light-gray;
-  // padding: 20px 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  @include clearfix;
+  font-size: 14px;
+
   a {
     display: inline-block;
-    padding: 1rem 0;
-  }
-}
-
-.logo {
-  width: 100%;
-  padding: 20px 0;
-  text-align: center;
-  img {
-    width: 180px;
-    max-width: 30%;
+    padding: 12px 0;
   }
 }
 
 .app-nav-logo {
+  display: block;
+  float: left;
+
   color: $text-color;
   font-size: 1.15rem;
   text-decoration: none;
   font-weight: bold;
+  text-indent: -9999em;
+  overflow: hidden;
+
+  width: 105px;
+
+  background: transparent url("decred-logo-primary_set.png") center/contain no-repeat;
 }
 
 .app-nav-auth {
   float: right;
+  margin-top: 4px;
 
   @include thredded-media-mobile {
     font-size: 0;
