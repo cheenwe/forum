@@ -31,13 +31,11 @@
   <% end %>
 
   <cite class="thredded--topics--updated-by">
-    <%= time_ago topic.last_post_at %>
-    <%= user_link topic.last_user %>
+    <%= user_link topic.last_user %> <%= time_ago topic.last_post_at %>更新
   </cite>
 
   <cite class="thredded--topics--started-by">
-    <%= time_ago topic.created_at %>
-    <%= user_link topic.user %>
+    <%= user_link topic.user %> <%= time_ago topic.created_at %>发布
   </cite>
 
   <% if topic.blocked? && topic.can_moderate? %>

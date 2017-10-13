@@ -2,7 +2,7 @@ zh-CN:
   brand:
     name: Decred
   common:
-    time_ago: "%{time} 前"
+    time_ago: "%{time}前"
   nav:
     edit_my_account: 编辑账户
     forums: :thredded.nav.all_messageboards
