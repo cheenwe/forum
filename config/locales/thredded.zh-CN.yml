@@ -215,12 +215,12 @@ zh-CN:
     users:
       currently_online: "目前在线"
       last_active_html: "最后活跃%{time_ago}"
-      posted_in_topic_html: "%{topic_link}中的回复"
+      posted_in_topic_html: "在%{topic_link}中回复到："
       posts_count:
         one: "一个回复"
         other: "%{count} 个回复"
       recent_activity: :thredded.recent_activity
-      started_topic_html: "发布 %{topic_link}"
+      started_topic_html: "发布帖子 %{topic_link}"
       started_topics_count:
         one: "发布一个帖子"
         other: "发布 %{count} 个帖子"
