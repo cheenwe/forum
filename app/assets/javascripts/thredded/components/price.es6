@@ -4,13 +4,9 @@
     interpolate: /\{\{(.+?)\}\}/g
   };
 
-  let $price_btc = $('#JS__price_btc');
   let $price_btc_template = $('#JS__price_btc_template').html();
-  let $price_usd = $('#JS__price_usd');
   let $price_usd_template = $('#JS__price_usd_template').html();
-  let $price_cny = $('#JS__price_cny');
   let $price_cny_template = $('#JS__price_cny_template').html();
-  let $percent_change_24h = $('#JS__percent_change_24h');
   let $percent_change_24h_template = $('#JS__percent_change_24h_template').html();
 
   let last_price_btc, last_price_usd, last_price_cny;
@@ -22,6 +18,12 @@
     const usd_cny_rate = res.rates.CNY;
 
     setInterval(() => {
+
+      // Fixme
+      let $price_btc = $('#JS__price_btc');
+      let $price_usd = $('#JS__price_usd');
+      let $price_cny = $('#JS__price_cny');
+      let $percent_change_24h = $('#JS__percent_change_24h');
 
       $.get('https://api.coinmarketcap.com/v1/ticker/decred/')
       .then((res) => {
