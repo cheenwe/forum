@@ -26,6 +26,7 @@
   overflow: hidden;
 
   width: 105px;
+  margin-right: 20px;
 
   background: transparent image-url("decred-logo-primary_set.png") center/contain no-repeat;
   // background: transparent image-url("logo.png") center/contain no-repeat;
@@ -33,13 +34,50 @@
 
   span {
     display: block;
-    color: #0c1e3e !important;
+    color: #c4cbd2 !important;
     text-indent: 0;
     font-weight: 400;
     position: absolute;
-    top: 10px;
+    top: 12px;
     right: 0;
     font-size: 9px;
+  }
+}
+
+.price {
+  float: left;
+  font-size: 1rem;
+  color: #c4cbd2;
+
+  table {
+    @include margin(0 null);
+  }
+
+  table th, table td {
+    @include padding(15px null 12px);
+    border-bottom: 0;
+  }
+
+  .price-green, .price-red {
+    abbr {
+      margin-right: 3px;
+    }
+
+    > span {
+      color: #c4cbd2;
+    }
+  }
+
+  .price-green {
+    color: #41bf53;
+    // color: #2ed8a3;
+  }
+
+  .price-red {
+    color: #fd714a;
+    .icon-trend {
+      display: inline-block;
+    }
   }
 }
 

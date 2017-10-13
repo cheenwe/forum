@@ -17,6 +17,16 @@
   line-height: $base-line-height;
 }
 
+.thredded--table td,
+.thredded--post--content table td,
+table td,
+.thredded--table th,
+.thredded--post--content table th,
+table th {
+  @include padding(null 0.5rem);
+  text-align: left;
+}
+
 .hide {
   display: none !important;
 }
@@ -27,6 +37,15 @@
 
 .actions {
   margin-bottom: 20px;
+}
+
+// stats
+.app-stats {
+  font-size: 13px;
+  table th, table td {
+    padding: .4rem;
+    border-bottom-width: 0;
+  }
 }
 
 .thredded--alert,
@@ -95,7 +114,7 @@
 // Messageboard
 .thredded--messageboard {
   text-decoration: none !important;
-  padding: 29px;
+  padding: 35px;
   @include transition(ease .2s);
 
   &:hover {
