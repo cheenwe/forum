@@ -16,7 +16,7 @@
   let last_price_btc, last_price_usd, last_price_cny;
   let price_btc_trend = 'default', price_usd_trend = 'default', price_cny_trend = 'default';
 
-  $.get('http://api.fixer.io/latest?base=USD&symbols=CNY')
+  $.get('https://api.fixer.io/latest?base=USD&symbols=CNY')
   .then((res) => {
 
     const usd_cny_rate = res.rates.CNY;
