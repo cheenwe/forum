@@ -24,6 +24,8 @@ h2 {
 
 a {
   @extend %thredded--link;
+  // text-decoration: underline !important;
+
   &:hover {
     text-decoration: underline !important;
   }
