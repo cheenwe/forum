@@ -156,7 +156,7 @@ table th {
 // Topic
 .thredded--topics--topic {
   margin-bottom: 0;
-  padding: 9px 0;
+  padding: 11px 0;
   @include clearfix;
 }
 
@@ -168,14 +168,16 @@ table th {
   width: 1.45rem;
   height: 1.45rem;
   line-height: 1.45rem;
-  left: -4rem;
-  top: 10px;
+  left: -1.85rem;
+  top: 13px;
   border-radius: 100%;
 }
 
 .thredded--topic-unread > .thredded--topics--posts-count {
   font-weight: 500 !important;
   background-color: #69d3f5;
+  letter-spacing: -0.1rem;
+  font-family: Consolas, menlo, monospace;
 }
 
 .thredded--topic-read > .thredded--topics--posts-count {
@@ -186,8 +188,9 @@ table th {
 .thredded--topics--topic-avatar {
   float: left;
   @include size(1.65rem);
-  position: absolute;
-  left: -2.2rem;
+  position: relative;
+  left: 0;
+  margin-right: 10px;
 
   img {
     border-radius: 50%;
@@ -206,11 +209,23 @@ table th {
 }
 
 .thredded--topics--title a {
+  color: #2971ff;
   font-weight: 400 !important;
 }
 
+.thredded--topic-sticky .thredded--topics--title a {
+  color: #fd714a;
+  font-weight: bold !important;
+}
+
+.thredded--topics--updated-by a {
+  color: #0c1e3e;
+}
+
+.thredded--topics--started-by,
 .thredded--topics--updated-by {
   margin-left: 5px;
+  color: #98abba;
 }
 
 

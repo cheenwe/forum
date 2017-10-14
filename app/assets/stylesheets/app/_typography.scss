@@ -24,10 +24,10 @@ h2 {
 
 a {
   @extend %thredded--link;
-  // text-decoration: underline !important;
+  text-decoration: none !important;
 
   &:hover {
-    text-decoration: underline !important;
+    // text-decoration: underline !important;
   }
 }
 
