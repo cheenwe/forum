@@ -6,7 +6,7 @@
   };
 
   const PROTOCOL = 'https://';
-  const USD_CNY_RATE_URL = `${PROTOCOL}finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json`;
+  const USD_CNY_RATE_URL = `${PROTOCOL}api.fixer.io/latest?base=USD&symbols=CNY`;
   const DCR_PRICE_URL = `${PROTOCOL}api.coinmarketcap.com/v1/ticker/decred`;
   const duration = 4000;
 
@@ -48,12 +48,8 @@
 
   function getUSDCNYRate() {
     return $.get(USD_CNY_RATE_URL)
-    .then(({ list: { resources } }) => {
-      resources.forEach(({ resource: { fields } }) => {
-        if (fields.symbol === 'CNY=X') {
-          return usd_cny_rate = fields.price;
-        }
-      });
+    .then(({ rates: { CNY } }) => {
+      return usd_cny_rate = CNY;
     });
   }
 
