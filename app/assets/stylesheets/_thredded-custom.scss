@@ -39,12 +39,35 @@ table th {
   margin-bottom: 20px;
 }
 
-// stats
-.app-stats {
-  font-size: 13px;
-  table th, table td {
-    padding: .4rem;
-    border-bottom-width: 0;
+// nav tabs
+.nav-tabs {
+  @include clearfix;
+  list-style: none;
+  padding-left: 0;
+  @include margin(0 null 20px);
+  border-bottom: 1px solid #eee;
+
+  > li {
+    float: left;
+    display: block;
+    margin-right: 15px;
+    margin-bottom: -1px;
+    @include clearfix;
+
+    a {
+      display: block;
+      color: #09182D;
+      padding: 10px 0;
+      border: 1px solid transparent;
+    }
+
+    &.active {
+      a {
+        font-weight: bold;
+        color: $brand-primary;
+        border-bottom-color: $brand-primary;
+      }
+    }
   }
 }
 
@@ -114,7 +137,7 @@ table th {
 // Messageboard
 .thredded--messageboard {
   text-decoration: none !important;
-  padding: 35px;
+  padding: 25px;
   @include transition(ease .2s);
 
   &:hover {
