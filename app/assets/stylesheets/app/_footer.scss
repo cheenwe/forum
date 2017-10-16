@@ -1,4 +1,13 @@
 .footer {
   text-align: center;
   font-size: 14px;
+  .site-links {
+	  margin-bottom: 7px;
+	  a {
+		  // text-decoration: underline !important;
+		  margin: 0 4px;
+		  color: #C4CBD2;
+	  }
+  }
 }
+

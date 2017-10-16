@@ -1,4 +1,29 @@
 @import "bourbon/bourbon";
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: font-url('Proxima-Nova-Regular.otf') format("openType");
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: font-url('Proxima-Nova-Bold.otf') format("openType");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: font-url('Proxima-Nova-Regular-Italic.otf') format("openType");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: font-url('Proxima-Nova-Bold-Italic.otf') format("openType");
+  font-weight: bold;
+  font-style: italic;
+}
+
 @import "app/layout";
 @import "app/typography";
 @import "app/forms";

@@ -4,7 +4,8 @@ html {
 
 body {
   background-color: $body-background-color;
-  // letter-spacing: -0.025rem;
+  // background: transparent image-url('voting-system.png') left/contain no-repeat fixed; 
+  letter-spacing: -0.03rem;
   color: #09182d;
 }
 
@@ -17,6 +18,10 @@ body {
   font-size: $base-font-size;
   line-height: $base-line-height;
   margin: 0;
+}
+
+.app-container {
+	// background-color: $body-background-color;
 }
 
 .container {
@@ -44,5 +49,5 @@ body {
 .app-auth-container {
   width: 80%;
   max-width: 400px;
-  @include margin(null auto);
+  @include margin(null auto 20px);
 }

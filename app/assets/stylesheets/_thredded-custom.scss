@@ -108,7 +108,7 @@ table th {
 .thredded--navigation--search input[type="search"]:focus,
 .thredded--navigation--search input[type="search"]:not(:placeholder-shown) {
   border-color: #2971ff;
-  padding: 9px 6px !important;
+  padding: 10px 6px 8px !important;
 }
 
 // Messageboard
@@ -235,4 +235,9 @@ table th {
   a {
     color: #2971ff;
   }
+}
+
+// =================
+.thredded--link:active, .thredded--messageboard:active, .thredded--topic-header--edit-topic:active, .thredded--topic-header--follow-info form input[type=submit]:active, .thredded--topic-header--follow-info form button:active, a:active, .app-nav-theme > ul > li > button:active, .app-nav-locale > ul > li > button:active, .thredded--link:focus, .thredded--messageboard:focus, .thredded--topic-header--edit-topic:focus, .thredded--topic-header--follow-info form input[type=submit]:focus, .thredded--topic-header--follow-info form button:focus, a:focus, .app-nav-theme > ul > li > button:focus, .app-nav-locale > ul > li > button:focus, .thredded--link:hover, .thredded--messageboard:hover, .thredded--topic-header--edit-topic:hover, .thredded--topic-header--follow-info form input[type=submit]:hover, .thredded--topic-header--follow-info form button:hover, a:hover, .app-nav-theme > ul > li > button:hover, .app-nav-locale > ul > li > button:hover {
+	color: $brand-primary;
 }

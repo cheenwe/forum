@@ -18,13 +18,7 @@
 
     <%= render 'shared/header' %>
 
-    <div class="app-content-container">
-      <div class="container">
-        <%= render 'shared/stats' %>
-
-        <%= yield %>
-      </div>
-    </div>
+    <div class="app-content-container"><div class="container"><%= yield %></div></div>
 
     <%= render 'shared/footer' %>
     <%# If the app JS is loaded via an [async] script, the JS may

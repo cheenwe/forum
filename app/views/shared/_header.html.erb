@@ -15,31 +15,34 @@
 
     <a class="app-nav-logo" href="/"><%= t 'brand.name' %><span>中国</span></a>
 
-    <div class="price" id="JS__price">
+    <div class="price">
+      <div class="cssload-loader" id="cssloader"></div>
       <table>
         <tbody>
           <tr>
-            <td id="JS__price_btc"><span class="price"><abbr title="比特币价格">&#3647;</abbr>...</span></td>
-            <td id="JS__price_usd"><span class="price"><abbr title="美元价格">&dollar;</abbr>...</span></td>
-            <td id="JS__price_cny"><span class="price"><abbr title="人民币价格">&yen;</abbr>...</span></td>
-            <td id="JS__percent_change_24h"></td>
+            <td id="price_btc"></td>
+            <td id="price_usd"></td>
+            <td id="price_cny"></td>
+            <td>
+            	<div id="percent_change_24h"></div>
+            </td>
           </tr>
 
         </tbody>
       </table>
     </div>
 
-    <script type="text/template" id="JS__price_btc_template">
-      <span class="price-{{ price_btc_trend }}"><abbr title="比特币价格">&#3647;</abbr><strong>{{ price_btc[0] }}</strong><span>{{ price_btc[1] }}</span></span>
+    <script type="text/template" id="price_btc_template">
+      <span class="price-{{ price_btc_className }}"><abbr title="比特币价格">&#3647;</abbr><strong>{{ price_btc[0] }}</strong><span>{{ price_btc[1] }}</span></span>
     </script>
-    <script type="text/template" id="JS__price_usd_template">
-      <span class="price-{{ price_usd_trend }}"><abbr title="美元价格">&dollar;</abbr><strong>{{ price_usd[0] }}</strong><span>{{ price_usd[1] }}</span></span>
+    <script type="text/template" id="price_usd_template">
+      <span class="price-{{ price_usd_className }}"><abbr title="美元价格">&dollar;</abbr><strong>{{ price_usd[0] }}</strong><span>{{ price_usd[1] }}</span></span>
     </script>
-    <script type="text/template" id="JS__price_cny_template">
-      <span class="price-{{ price_cny_trend }}"><abbr title="人民币价格">&yen;</abbr><strong>{{ price_cny[0] }}</strong><span>{{ price_cny[1] }}</span></span>
+    <script type="text/template" id="price_cny_template">
+      <span class="price-{{ price_cny_className }}"><abbr title="人民币价格">&yen;</abbr><strong>{{ price_cny[0] }}</strong><span>{{ price_cny[1] }}</span></span>
     </script>
-    <script type="text/template" id="JS__percent_change_24h_template">
-      <span class="price-{{ percent_change_24h.indexOf('-') != -1 ? 'red' : 'green' }}"><abbr class="icon-trend" title="24小时涨跌幅">{{ percent_change_24h.indexOf('-') != -1 ? '&#x25BC;' : '&#x25B2;' }}</abbr><strong>{{ percent_change_24h }}%</strong></span>
+    <script type="text/template" id="percent_change_24h_template">
+      <span class="price-{{ percent_change_24h.indexOf('-') != -1 ? 'red' : 'green' }}"><abbr class="icon-trend" title="24小时涨跌幅">{{ percent_change_24h.indexOf('-') !== -1 ? '&#x25BC;' : '&#x25B2;' }}</abbr><strong>{{ percent_change_24h }}%</strong></span>
     </script>
 
     <div class="app-nav-theme hide">
