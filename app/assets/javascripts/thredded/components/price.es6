@@ -37,9 +37,24 @@
     var { BTC, USD, CNY } = DCR;
     var posusd, poscny;
 
-    price_btc = String(BTC.PRICE); // BTC price
-    price_usd = String(USD.PRICE); // USD price
-    price_cny = String(CNY.PRICE); // CNY price
+    price_btc = String(BTC.PRICE).length < 8 ? String(BTC.PRICE) + (() => {
+      switch(String(BTC.PRICE).length) {
+        case 7:
+        return '0'; break;
+        case 6:
+        return '00'; break;
+        case 5:
+        return '000'; break;
+        case 4:
+        return '0000'; break;
+        case 3:
+        return '00000'; break;
+        case 2:
+        return '000000'; break;
+      }
+    }) : String(BTC.PRICE); // BTC price
+    price_usd = String(USD.PRICE).substring(0, pos(USD.PRICE) + 2); // USD price
+    price_cny = String(CNY.PRICE).substring(0, pos(CNY.PRICE) + 2); // CNY price
 
     btc_change_24h = String(BTC.CHANGEPCT24HOUR).substring(0, pos(BTC.CHANGEPCT24HOUR));
     usd_change_24h = String(USD.CHANGEPCT24HOUR).substring(0, pos(USD.CHANGEPCT24HOUR));
