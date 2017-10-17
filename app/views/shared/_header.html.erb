@@ -32,11 +32,10 @@
       </table>
     </div>
 
-    <script type="text/template" id="price_btc_template"><span class="price-{{ btc_className }}"><abbr title="比特币价格">&#3647;</abbr><strong>{{ price_btc[0] }}</strong><span>{{ price_btc[1] }}</span><sub class="text-{{ btc_change_24h.indexOf('-') !== -1 ? 'red' : 'green' }}" title="24 小时涨跌幅">{{ btc_change_24h.indexOf('-') !== -1 ? '&#x25BC;' : '&#x25B2;' }}{{btc_change_24h }}%</sub></span></script>
-    <script type="text/template" id="price_usd_template"><span class="price-{{ usd_className }}"><abbr title="美元价格">&dollar;</abbr><strong>{{ price_usd[0] }}</strong><span>{{ price_usd[1] }}</span><sub class="text-{{ usd_change_24h.indexOf('-') !== -1 ? 'red' : 'green' }}" title="24 小时涨跌幅">{{ usd_change_24h.indexOf('-') !== -1 ? '&#x25BC;' : '&#x25B2;' }}{{usd_change_24h }}%</sub></span></script>
-    <script type="text/template" id="price_cny_template"><span class="price-{{ cny_className }}"><abbr title="人民币价格">&yen;</abbr><strong>{{ price_cny[0] }}</strong><span>{{ price_cny[1] }}</span><sub class="text-{{ cny_change_24h.indexOf('-') !== -1 ? 'red' : 'green' }}" title="24 小时涨跌幅">{{ cny_change_24h.indexOf('-') !== -1 ? '&#x25BC;' : '&#x25B2;' }}{{cny_change_24h }}%</sub></span></script>
-    <script type="text/template" id="percent_change_24h_template"><span class="price-{{ percent_change_24h.indexOf('-') != -1 ? 'red' : 'green' }}"><abbr class="icon-trend" title="24小时涨跌幅">{{ percent_change_24h.indexOf('-') !== -1 ? '&#x25BC;' : '&#x25B2;' }}</abbr><strong>{{ percent_change_24h }}%</strong></span></script>
-
+    <script type="text/template" id="price_btc_template"><div><span class="price-{{ btc_className }}"><abbr title="比特币价格">&#3647;</abbr><strong>{{ price_btc[0] }}</strong><span>{{ price_btc[1] }}</span></span></div><div class="change"><span class="text-{{ btc_change_24h.indexOf('-') !== -1 ? 'red' : 'green' }}" title="24 小时涨跌幅">{{ btc_change_24h.indexOf('-') !== -1 ? '&#x25BC;' : '&#x25B2;' }}{{btc_change_24h }}%</span></div></script>
+    <script type="text/template" id="price_usd_template"><div><span class="price-{{ usd_className }}"><abbr title="美元价格">&dollar;</abbr><strong>{{ price_usd[0] }}</strong><span>{{ price_usd[1] }}</span></span></div><div class="change"><span class="text-{{ usd_change_24h.indexOf('-') !== -1 ? 'red' : 'green' }}" title="24 小时涨跌幅">{{ usd_change_24h.indexOf('-') !== -1 ? '&#x25BC;' : '&#x25B2;' }}{{usd_change_24h }}%</span></div></script>
+    <script type="text/template" id="price_cny_template"><div><span class="price-{{ cny_className }}"><abbr title="人民币价格">&yen;</abbr><strong>{{ price_cny[0] }}</strong><span>{{ price_cny[1] }}</span></span></div><div class="change"><span class="text-{{ cny_change_24h.indexOf('-') !== -1 ? 'red' : 'green' }}" title="24 小时涨跌幅">{{ cny_change_24h.indexOf('-') !== -1 ? '&#x25BC;' : '&#x25B2;' }}{{cny_change_24h }}%</span></div></script>
+	
     <div class="app-nav-theme hide">
       <span class="app-nav-text"><%= t 'nav.theme' %>:</span>
       <ul>

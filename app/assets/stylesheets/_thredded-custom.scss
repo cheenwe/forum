@@ -53,6 +53,12 @@ table th {
     margin-right: 15px;
     margin-bottom: -1px;
     @include clearfix;
+	
+	&.divider {
+		@include size(1px 20px);
+		background-color: #eee;
+		@include position(relative, 10px null null);
+	}
 
     a {
       display: block;

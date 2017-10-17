@@ -48,7 +48,7 @@
 .price {
   float: left;
   font-size: 1.115rem;
-  line-height: 1.25;
+  line-height: 1;
   color: #c4cbd2;
   height: 50px;
   position: relative;
@@ -58,7 +58,7 @@
   }
 
   table th, table td {
-    @include padding(15px null 12px);
+    @include padding(12px null 10px);
     border-bottom: 0;
   }
 
@@ -73,9 +73,13 @@
     }
 
     sub {
-      font-size: .75rem;
-      @include position(relative, -2px null null 2px);
+      // font-size: .75rem;
+      // @include position(relative, 10px null null -60px);
     }
+  }
+  
+  .change {
+	  font-size: .75rem;
   }
 
   .price-green {
