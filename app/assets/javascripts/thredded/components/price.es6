@@ -37,7 +37,7 @@
     var { BTC, USD, CNY } = DCR;
     var posusd, poscny;
 
-    price_btc = String(BTC.PRICE).length < 8 ? String(BTC.PRICE) + (() => {
+    price_btc = String(BTC.PRICE).length < 8 ? String(BTC.PRICE) + (function() {
       switch(String(BTC.PRICE).length) {
         case 7:
         return '0'; break;
@@ -52,7 +52,7 @@
         case 2:
         return '000000'; break;
       }
-    }) : String(BTC.PRICE); // BTC price
+    }()) : String(BTC.PRICE); // BTC price
     price_usd = String(USD.PRICE).substring(0, pos(USD.PRICE) + 2); // USD price
     price_cny = String(CNY.PRICE).substring(0, pos(CNY.PRICE) + 2); // CNY price
 
