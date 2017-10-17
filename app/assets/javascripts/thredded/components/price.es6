@@ -1,137 +1,120 @@
 ;(() => {
 
-  // underscore template settings
   _.templateSettings = {
     interpolate: /\{\{(.+?)\}\}/g
   };
 
   const PROTOCOL = 'https://';
-  const USD_CNY_RATE_URL = `${PROTOCOL}api.fixer.io/latest?base=USD&symbols=CNY`;
-  const DCR_PRICE_URL = `${PROTOCOL}api.coinmarketcap.com/v1/ticker/decred`;
-  const duration = 4000;
-
-  // HTML templates
-  var priceBTCTemplate = $('#price_btc_template').html();
-  var priceUSDTemplate = $('#price_usd_template').html();
-  var priceCNYTemplate = $('#price_cny_template').html();
-  var percentChange24HTemplate = $('#percent_change_24h_template').html();
-
-  // targets
-  var ePriceBTC, ePriceUSD, ePriceCNY, ePercentChange24H
-
-  // prices & class name;
-  var prev_price_btc, prev_price_usd, prev_price_cny;
-  var price_btc_className, price_usd_className, price_cny_className;
-
-  var price_btc, price_usd, price_cny, percent_change_24h;
-  var isPercentChange24HUp;
-
-  // colors
+  const DCR_PRICE_URL = `${PROTOCOL}min-api.cryptocompare.com/data/pricemultifull?fsyms=DCR&tsyms=BTC,USD,CNY`;
+  const duration = 5000;
   const COLOR_UP = 'green', COLOR_DOWN = 'red';
 
+  var btctmpl = $('#price_btc_template').html();
+  var usdtmpl = $('#price_usd_template').html();
+  var cnytmpl = $('#price_cny_template').html();
+
+  var price_btc, price_usd, price_cny;
+  var prev_price_btc, prev_price_usd, prev_price_cny;
+  var btc_change_24h, usd_change_24h, cny_change_24h;
+  var btc_className, usd_className, cny_className;
+
   // Initial
-  // get USD_CNY rate
-  var usd_cny_rate;
+  renderPrice();
+  intervalPrice(duration);
 
-  getUSDCNYRate()
-  .then(() => {
-    renderPrice();
-    intervalPrice(duration);
-  });
-
-  // Interval
   function intervalPrice(duration) {
     setInterval(() => {
       renderPrice();
     }, duration);
   }
 
-  function getUSDCNYRate() {
-    return $.get(USD_CNY_RATE_URL)
-    .then(({ rates: { CNY } }) => {
-      return usd_cny_rate = CNY;
-    });
-  }
-
-  // render price
   function renderPrice() {
     return $.get(DCR_PRICE_URL)
-    .then(res => renderTemplete(res[0]));
+    .then(res => renderTemplete(res));
   }
 
-  // render template
-  function renderTemplete(data) {
-    price_btc = data.price_btc; // BTC price
-    price_usd = data.price_usd; // USD price
-    price_cny = String(data.price_usd * usd_cny_rate); // CNY price
-    percent_change_24h = data.percent_change_24h; // percent change 24h
+  function renderTemplete({ RAW: { DCR } }) {
+    var { BTC, USD, CNY } = DCR;
+    var posusd, poscny;
 
-    isPercentChange24HUp = percent_change_24h.indexOf('-') === -1;
+    price_btc = String(BTC.PRICE); // BTC price
+    price_usd = String(USD.PRICE); // USD price
+    price_cny = String(CNY.PRICE); // CNY price
 
-    // 如果已经有价格
-    if (prev_price_btc &&
-          prev_price_usd &&
-          prev_price_cny) {
+    btc_change_24h = String(BTC.CHANGEPCT24HOUR).substring(0, pos(BTC.CHANGEPCT24HOUR));
+    usd_change_24h = String(USD.CHANGEPCT24HOUR).substring(0, pos(USD.CHANGEPCT24HOUR));
+    cny_change_24h = String(CNY.CHANGEPCT24HOUR).substring(0, pos(CNY.CHANGEPCT24HOUR));
 
-      // price_btc
-      if (prev_price_btc > price_btc) {
-        price_btc_className = COLOR_DOWN;
-      } else if (prev_price_btc < price_btc) {
-        price_btc_className = COLOR_UP;
+    prev_price_btc = getPrevPrice('prev_price_btc');
+    prev_price_usd = getPrevPrice('prev_price_usd');
+    prev_price_cny = getPrevPrice('prev_price_cny');
+
+    if (prev_price_btc && prev_price_usd && prev_price_cny) {
+      if (prev_price_btc < price_btc ) {
+        btc_className = COLOR_UP;
+      } else if (prev_price_btc > price_btc) {
+        btc_className = COLOR_DOWN;
+      } else {
+        btc_className = getClassName(btc_change_24h);
       }
 
-      // price_usd
-      if (prev_price_btc > price_btc) {
-        price_btc_className = COLOR_DOWN;
-      } else if (prev_price_btc < price_btc) {
-        price_btc_className = COLOR_UP;
+      if (prev_price_usd < price_usd) {
+        usd_className = COLOR_UP;
+      } else if (prev_price_usd > price_usd) {
+        usd_className = COLOR_DOWN;
+      } else {
+        usd_className = getClassName(usd_change_24h);
       }
 
-      // price_cny
-      if (prev_price_cny > price_cny) {
-        price_cny_className = COLOR_DOWN;
-      } else if (prev_price_cny < price_cny) {
-        price_cny_className = COLOR_UP;
+      if (prev_price_cny < price_cny) {
+        cny_className = COLOR_UP;
+      } else if (prev_price_cny > price_cny) {
+        cny_className = COLOR_DOWN;
+      } else {
+        cny_className = getClassName(cny_change_24h);
       }
+
+    } else {
+      btc_className = getClassName(btc_change_24h);
+      usd_className = getClassName(usd_change_24h);
+      cny_className = getClassName(cny_change_24h);
     }
-    
-    // 第一次请求
-    else {
-      price_btc_className = getClassName(isPercentChange24HUp);
-      price_usd_className = getClassName(isPercentChange24HUp);
-      price_cny_className = getClassName(isPercentChange24HUp);
-    }
 
-    prev_price_btc = price_btc;
-    prev_price_usd = price_usd;
-    prev_price_cny = price_cny;
+    setPrevPrice('prev_price_btc', price_btc);
+    setPrevPrice('prev_price_usd', price_usd);
+    setPrevPrice('prev_price_cny', price_cny);
 
-    var posPriceUSD = findPos(price_usd), posPriceCNY = findPos(price_cny);
+    posusd = pos(price_usd), poscny = pos(price_cny);
 
-    price_btc = [ price_btc.slice(0, 6), price_btc.slice(6) ];
-    price_usd = [ price_usd.slice(0, posPriceUSD), price_usd.slice(posPriceUSD) ];
-    price_cny = [ price_cny.slice(0, posPriceCNY), price_cny.slice(posPriceCNY, posPriceCNY + 2) ];
-    price_btc_className = price_btc_className;
-    price_usd_className = price_usd_className;
-    price_cny_className = price_btc_className;
+    price_btc = [ price_btc.slice(0, 6), price_btc.substring(6) ];
+    price_usd = [ price_usd.slice(0, posusd), price_usd.substring(posusd, posusd + 2) ];
+    price_cny = [ price_cny.slice(0, poscny), price_cny.substring(poscny, poscny + 2) ];
 
     $('#cssloader').fadeOut('fast');
-    $('#price_btc').html(_t(priceBTCTemplate)({ price_btc, price_btc_className }));
-    $('#price_usd').html(_t(priceUSDTemplate)({ price_usd, price_usd_className }));
-    $('#price_cny').html(_t(priceCNYTemplate)({ price_cny, price_cny_className }));
-    $('#percent_change_24h').html(_t(percentChange24HTemplate)({ percent_change_24h }));
+
+    _html('price_btc', btctmpl, { price_btc, btc_change_24h, btc_className });
+    _html('price_usd', usdtmpl, { price_usd, usd_change_24h, usd_className });
+    _html('price_cny', cnytmpl, { price_cny, cny_change_24h, cny_className });
   }
 
-  function findPos(str) {
-    return str.indexOf('.') + 3;
+  function getPrevPrice(key) {
+    return sessionStorage.getItem(key);
   }
 
-  function getClassName(isPercentChange24HUp) {
-    return isPercentChange24HUp ? COLOR_UP : COLOR_DOWN;
+  function setPrevPrice(key, val) {
+    return sessionStorage.setItem(key, val);
   }
 
-  function _t(text) {
-    return _.template(text);
+  function pos(str) {
+    return String(str).indexOf('.') + 3;
+  }
+
+  function getClassName(percentChange) {
+    return percentChange.indexOf('-') === -1 ? COLOR_UP : COLOR_DOWN;
+  }
+
+  function _html(target, text, data) {
+    return $(`#${target}`).html(_.template(text)(data));
   }
 
 })();
