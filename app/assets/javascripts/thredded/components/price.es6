@@ -70,7 +70,9 @@
       } else if (prev_price_btc > price_btc) {
         btc_className = COLOR_DOWN;
       } else {
-        btc_className = getClassName(btc_change_24h);
+        if (!btc_className) {
+          btc_className = getClassName(btc_change_24h);
+        }
       }
 
       if (prev_price_usd < price_usd) {
@@ -78,7 +80,9 @@
       } else if (prev_price_usd > price_usd) {
         usd_className = COLOR_DOWN;
       } else {
-        usd_className = getClassName(usd_change_24h);
+        if (!usd_className) {
+          usd_className = getClassName(usd_change_24h);
+        }
       }
 
       if (prev_price_cny < price_cny) {
@@ -86,7 +90,9 @@
       } else if (prev_price_cny > price_cny) {
         cny_className = COLOR_DOWN;
       } else {
-        cny_className = getClassName(cny_change_24h);
+        if (!cny_className) {
+          cny_className = getClassName(cny_change_24h);
+        }
       }
 
     } else {
