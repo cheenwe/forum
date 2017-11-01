@@ -12,3 +12,12 @@ en:
   themes:
     day: Day
     night: Night
+  navbar:
+    stats: Stats
+    pos: Proof-of-work
+    wallets: Wallet
+    explorer: Explorer
+    trade: Trade
+    downloads: Downloads
+    news: News
+    forum: Forum

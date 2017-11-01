@@ -11,15 +11,15 @@
 </head>
 <body class="app">
   <% is_thredded = content_for?(:thredded_page_id) %>
-
     <%= content_tag :div, class: 'app-container', id: ('app-page-container' unless is_thredded), 'data-locale' => I18n.locale do %>
-
     <%= render 'shared/flash_messages' unless is_thredded %>
-
     <%= render 'shared/header' %>
-
-    <div class="app-content-container"><div class="container"><%= yield %></div></div>
-
+    <div class="app-content-container">
+      <div class="container">
+        <%= render 'shared/navbar' %>
+        <%= yield %>
+      </div>
+    </div>
     <%= render 'shared/footer' %>
     <%# If the app JS is loaded via an [async] script, the JS may
     run before or after DOMContentLoaded. Expose a flag, so it can

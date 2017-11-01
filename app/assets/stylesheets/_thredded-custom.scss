@@ -44,7 +44,7 @@ table th {
   @include clearfix;
   list-style: none;
   padding-left: 0;
-  @include margin(0 null 20px);
+  @include margin(0 null 10px);
   border-bottom: 1px solid #eee;
 
   > li {

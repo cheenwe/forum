@@ -13,3 +13,12 @@ zh-CN:
   themes:
     day: 白天
     night: 夜晚
+  navbar:
+    stats: 网络状态
+    pos: PoS
+    wallets: 钱包
+    explorer: 浏览器
+    trade: 行情走势
+    downloads: 挖矿软件
+    news: 资讯
+    forum: 社区

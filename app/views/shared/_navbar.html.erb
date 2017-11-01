@@ -1,0 +1,13 @@
+<ul class="nav nav-tabs">
+  <li><a href="javascript:;">挖矿收益 &#8281;</a></li>
+  <li class="divider"></li>
+  <li<%= ' class=active' if current_page?(main_app.root_path) %>><%= link_to t('navbar.stats'), main_app.root_path %></li>
+  <li<%= ' class=active' if current_page?(main_app.pos_path) %>><%= link_to main_app.pos_path do %><abbr title="权益证明（Proof-of-stake）"><%= t('navbar.pos') %></abbr><% end %></li>
+  <li<%= ' class=active' if current_page?(main_app.wallets_path) %>><%= link_to t('navbar.wallets'), main_app.wallets_path %></li>
+
+  <li class="hide"><%= link_to t('navbar.explorer'), main_app.explorer_path %></li>
+
+  <li<%= ' class=active' if current_page?(main_app.trade_path) %>><%= link_to t('navbar.trade'), main_app.trade_path %></li>
+  <li<%= ' class=active' if current_page?(main_app.downloads_path) %>><%= link_to t('navbar.downloads'), main_app.downloads_path %></li>
+  <li<%= ' class=active' if current_page?(thredded.root_path) %>><%= link_to t('navbar.forum'), thredded.root_path %></li>
+</ul>

@@ -25,7 +25,7 @@
   text-indent: -9999em;
   overflow: hidden;
 
-  width: 105px;
+  width: 110px;
   margin-right: 20px;
 
   background: transparent image-url("decred-logo-primary_set.png") center/contain no-repeat;
@@ -33,8 +33,8 @@
   position: relative;
 
   span {
-    // display: block;
-	display: none !important;
+    display: block;
+    // display: none !important;
     color: #c4cbd2 !important;
     text-indent: 0;
     font-weight: 400;
@@ -47,7 +47,7 @@
 
 .price {
   float: left;
-  font-size: 1.115rem;
+  font-size: 1.1rem;
   line-height: 1;
   color: #c4cbd2;
   height: 50px;
