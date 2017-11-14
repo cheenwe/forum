@@ -16,15 +16,15 @@
     <a class="app-nav-logo" href="/"><%= t 'brand.name' %><span>中国</span></a>
 
     <div class="price">
-      <div class="cssload-loader" id="cssloader"></div>
+      <div class="cssload-loader" id="cssloader" data-turbolinks-permanent></div>
       <table>
         <tbody>
           <tr>
-            <td id="price_btc"></td>
-            <td id="price_usd"></td>
-            <td id="price_cny"></td>
+            <td id="price_btc" data-turbolinks-permanent></td>
+            <td id="price_usd" data-turbolinks-permanent></td>
+            <td id="price_cny" data-turbolinks-permanent></td>
             <td>
-            	<div id="percent_change_24h"></div>
+            	<div id="percent_change_24h" data-turbolinks-permanent></div>
             </td>
           </tr>
 
@@ -35,7 +35,7 @@
     <script type="text/template" id="price_btc_template"><div><span class="price-{{ btc_className }}"><abbr title="比特币价格">&#3647;</abbr><strong>{{ price_btc[0] }}</strong><span>{{ price_btc[1] }}</span></span></div><div class="change"><span class="text-{{ btc_change_24h.indexOf('-') !== -1 ? 'red' : 'green' }}" title="24 小时涨跌幅">{{ btc_change_24h.indexOf('-') !== -1 ? '&#x25BC;' : '&#x25B2;' }}{{btc_change_24h }}%</span></div></script>
     <script type="text/template" id="price_usd_template"><div><span class="price-{{ usd_className }}"><abbr title="美元价格">&dollar;</abbr><strong>{{ price_usd[0] }}</strong><span>{{ price_usd[1] }}</span></span></div><div class="change"><span class="text-{{ usd_change_24h.indexOf('-') !== -1 ? 'red' : 'green' }}" title="24 小时涨跌幅">{{ usd_change_24h.indexOf('-') !== -1 ? '&#x25BC;' : '&#x25B2;' }}{{usd_change_24h }}%</span></div></script>
     <script type="text/template" id="price_cny_template"><div><span class="price-{{ cny_className }}"><abbr title="人民币价格">&yen;</abbr><strong>{{ price_cny[0] }}</strong><span>{{ price_cny[1] }}</span></span></div><div class="change"><span class="text-{{ cny_change_24h.indexOf('-') !== -1 ? 'red' : 'green' }}" title="24 小时涨跌幅">{{ cny_change_24h.indexOf('-') !== -1 ? '&#x25BC;' : '&#x25B2;' }}{{cny_change_24h }}%</span></div></script>
-	
+
     <div class="app-nav-theme hide">
       <span class="app-nav-text"><%= t 'nav.theme' %>:</span>
       <ul>
